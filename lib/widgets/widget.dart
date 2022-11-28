@@ -5,3 +5,4 @@ import 'package:shamo/shared/shared.dart';
 
 part 'product_card.dart';
 part 'product_tile.dart';
+part 'chat_tile.dart';
