@@ -257,7 +257,7 @@ class SignUpPage extends StatelessWidget {
         margin: EdgeInsets.only(top: 30),
         child: TextButton(
           onPressed: () {
-            Navigator.pop(context);
+            Navigator.pushNamed(context, '/main-page');
           },
           style: TextButton.styleFrom(
               backgroundColor: primaryColor,
@@ -273,6 +273,38 @@ class SignUpPage extends StatelessWidget {
               fontSize: 16,
             ),
           ),
+        ),
+      );
+    }
+
+    Widget footer() {
+      return Container(
+        margin: EdgeInsets.only(bottom: 30),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              "Already an account?",
+              style: subtitleTextStyle.copyWith(
+                fontSize: 12,
+              ),
+            ),
+            SizedBox(
+              width: 2,
+            ),
+            InkWell(
+              onTap: () {
+                Navigator.pop(context);
+              },
+              child: Text(
+                'Sign In',
+                style: purpleTextStyle.copyWith(
+                  fontWeight: medium,
+                  fontSize: 12,
+                ),
+              ),
+            )
+          ],
         ),
       );
     }
@@ -294,6 +326,8 @@ class SignUpPage extends StatelessWidget {
                 emailInput(),
                 passwordInput(),
                 signUpButton(),
+                Spacer(),
+                footer(),
               ],
             ),
           ),

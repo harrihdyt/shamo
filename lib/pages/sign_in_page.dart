@@ -29,7 +29,7 @@ class SignInPage extends StatelessWidget {
       );
     }
 
-    Widget fullNameInput() {
+    Widget emailInput() {
       return Container(
         margin: EdgeInsets.only(
           top: 70,
@@ -71,62 +71,6 @@ class SignInPage extends StatelessWidget {
                         style: primaryTextStyle,
                         decoration: InputDecoration.collapsed(
                           hintText: 'Your email address',
-                          hintStyle: subtitleTextStyle,
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-              ),
-            )
-          ],
-        ),
-      );
-    }
-
-    Widget emailInput() {
-      return Container(
-        margin: EdgeInsets.only(
-          top: 20,
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Email Address',
-              style: primaryTextStyle.copyWith(
-                fontWeight: medium,
-                fontSize: 16,
-              ),
-            ),
-            SizedBox(
-              height: 12,
-            ),
-            Container(
-              height: 50,
-              padding: EdgeInsets.symmetric(
-                horizontal: 16,
-              ),
-              decoration: BoxDecoration(
-                color: backgroundColor2,
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: Center(
-                child: Row(
-                  children: [
-                    Image.asset(
-                      'assets/email_icon.png',
-                      width: 17,
-                    ),
-                    SizedBox(
-                      width: 16,
-                    ),
-                    Expanded(
-                      child: TextFormField(
-                        obscureText: true,
-                        style: primaryTextStyle,
-                        decoration: InputDecoration.collapsed(
-                          hintText: 'Your Email Address',
                           hintStyle: subtitleTextStyle,
                         ),
                       ),
@@ -202,7 +146,9 @@ class SignInPage extends StatelessWidget {
         height: 50,
         margin: EdgeInsets.only(top: 30),
         child: TextButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, '/main-page');
+          },
           style: TextButton.styleFrom(
               backgroundColor: primaryColor,
               shape: RoundedRectangleBorder(
@@ -265,7 +211,6 @@ class SignInPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 header(),
-                fullNameInput(),
                 emailInput(),
                 passwordInput(),
                 signInButton(),
