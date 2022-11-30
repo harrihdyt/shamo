@@ -19,6 +19,8 @@ class MyApp extends StatelessWidget {
         '/sign-up': (context) => SignUpPage(),
         '/main-page': (context) => MainPage(),
         '/detail-chat': (context) => DetailChatPage(),
+        '/edit-profile': (context) => EditProfilePage(),
+        '/product-page': (context) => ProductPage(),
       },
     );
   }

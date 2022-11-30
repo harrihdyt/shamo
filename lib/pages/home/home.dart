@@ -9,3 +9,4 @@ part 'home_page.dart';
 part 'chat_page.dart';
 part 'wishlist_page.dart';
 part 'profile_page.dart';
+part 'edit_profile_page.dart';

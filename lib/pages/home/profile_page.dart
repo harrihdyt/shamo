@@ -46,12 +46,121 @@ class ProfilePage extends StatelessWidget {
                     ],
                   ),
                 ),
-                Image.asset(
-                  'assets/icon_exit.png',
-                  width: 20,
-                )
+                InkWell(
+                  onTap: () {
+                    Navigator.pushNamedAndRemoveUntil(
+                        context, '/sign-in', (route) => false);
+                  },
+                  child: Image.asset(
+                    'assets/icon_exit.png',
+                    width: 20,
+                  ),
+                ),
               ],
             ),
+          ),
+        ),
+      );
+    }
+
+    Widget menuItem(
+      String text,
+    ) {
+      return Container(
+        margin: EdgeInsets.only(
+          top: 16,
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              text,
+              style: secondaryTextStyle.copyWith(
+                fontSize: 13,
+              ),
+            ),
+            Icon(
+              Icons.arrow_forward_ios_rounded,
+              color: subtitleTextColor,
+            ),
+          ],
+        ),
+      );
+    }
+
+    Widget content() {
+      return Expanded(
+        child: Container(
+          width: double.infinity,
+          padding: EdgeInsets.symmetric(horizontal: defaultMargin),
+          decoration: BoxDecoration(
+            color: backgroundColor3,
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                height: 20,
+              ),
+              Text(
+                'Account',
+                style: primaryTextStyle.copyWith(
+                  fontWeight: semiBold,
+                  fontSize: 16,
+                ),
+              ),
+              SizedBox(
+                height: 16,
+              ),
+              InkWell(
+                onTap: () {
+                  Navigator.pushNamed(context, '/edit-profile');
+                },
+                child: menuItem(
+                  'Edit Profile',
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              menuItem(
+                'Your Orders',
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              menuItem(
+                'Help',
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Text(
+                'General',
+                style: primaryTextStyle.copyWith(
+                  fontWeight: semiBold,
+                  fontSize: 16,
+                ),
+              ),
+              SizedBox(
+                height: 16,
+              ),
+              menuItem(
+                'Privacy & Policy',
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              menuItem(
+                'Term of Service',
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              menuItem(
+                'Rate App',
+              ),
+            ],
           ),
         ),
       );
@@ -60,6 +169,7 @@ class ProfilePage extends StatelessWidget {
     return Column(
       children: [
         header(),
+        content(),
       ],
     );
   }
