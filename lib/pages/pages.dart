@@ -11,3 +11,5 @@ part 'sign_in_page.dart';
 part 'sign_up_page.dart';
 part 'detail_chat_page.dart';
 part 'product_page.dart';
+part 'cart_page.dart';
+part 'checkout_page.dart';
