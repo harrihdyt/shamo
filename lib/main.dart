@@ -23,6 +23,7 @@ class MyApp extends StatelessWidget {
         '/product-page': (context) => ProductPage(),
         '/cart': (context) => CartPage(),
         '/checkout-page': (context) => CheckoutPage(),
+        '/checkout-success': (context) => CheckoutSuccessPage(),
       },
     );
   }

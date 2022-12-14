@@ -10,3 +10,4 @@ part 'chat_tile.dart';
 part 'chat_bubble.dart';
 part 'wishlist_card.dart';
 part 'cart_card.dart';
+part 'checkout_card.dart';
